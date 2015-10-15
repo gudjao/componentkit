@@ -73,10 +73,10 @@ CK_FINAL_CLASS([CKCollectionViewDataSource class]);
   CK_NOT_DESIGNATED_INITIALIZER();
 }
 
-- (void)dealloc
-{
-    _collectionView.dataSource = nil;
-}
+//- (void)dealloc
+//{
+//    _collectionView.dataSource = nil;
+//}
 
 #pragma mark - Changesets
 
