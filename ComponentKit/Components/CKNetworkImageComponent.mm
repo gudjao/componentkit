@@ -10,6 +10,7 @@
 
 #import "CKNetworkImageComponent.h"
 #import "RJCircularLoaderView.h"
+#import "FLAnimatedImage.h"
 #import "objc/runtime.h"
 
 @interface CKNetworkImageSpecifier : NSObject
@@ -25,7 +26,7 @@
 @property (nonatomic, assign, readonly) CGRect cropRect;
 @end
 
-@interface CKNetworkImageComponentView : UIImageView
+@interface CKNetworkImageComponentView : FLAnimatedImageView
 @property (nonatomic, strong) CKNetworkImageSpecifier *specifier;
 @property (nonatomic, strong) RJCircularLoaderView *loaderView;
 - (void)didEnterReusePool;
@@ -135,9 +136,12 @@
     }
 }
 
-- (void)didDownloadImage:(CGImageRef)image error:(NSError *)error
+- (void)didDownloadImage:(CGImageRef)image error:(NSError *)error data:(NSData *)imageData
 {
-    if (image) {
+    if([[_specifier.url absoluteString] hasSuffix:@"gif"] && (imageData != nil)) {
+        self.animatedImage = [FLAnimatedImage animatedImageWithGIFData:imageData];
+        [self updateContentsRect];
+    } else if(image) {
         self.image = [UIImage imageWithCGImage:image];
         [self updateContentsRect];
     }
@@ -200,10 +204,10 @@
                  {
                      [weakSelf updateImageDownloadProgress:progress];
                  }
-                                                      completion:^(CGImageRef image, NSError *error)
+                                                      completion:^(CGImageRef image, NSError *error, NSData *imageData)
                  {
                      [weakSelf reveal];
-                     [weakSelf didDownloadImage:image error:error];
+                     [weakSelf didDownloadImage:image error:error data:imageData];
                  }];
 }
 

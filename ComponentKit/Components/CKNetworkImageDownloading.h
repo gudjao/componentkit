@@ -34,7 +34,7 @@
                     caller:(id)caller
              callbackQueue:(dispatch_queue_t)callbackQueue
      downloadProgressBlock:(void (^)(CGFloat progress))downloadProgressBlock
-                completion:(void (^)(CGImageRef image, NSError *error))completion;
+                completion:(void (^)(CGImageRef image, NSError *error, NSData *imageData))completion;
 
 /**
   @abstract Cancels an image download.
