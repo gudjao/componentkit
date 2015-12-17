@@ -26,10 +26,5 @@ Pod::Spec.new do |s|
     animated.requires_arc = true
     animated.dependency 'FLAnimatedImage'
   end
-
-  s.subspec 'RJImageLoader' do |imageloader|
-    imageloader.source = { :git => 'https://github.com/gudjao/RJImageLoader.git', :branch => 'zoog-custom' }
-    s.dependency 'RJImageLoader'
-  end
 end
 
