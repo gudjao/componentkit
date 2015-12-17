@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name = "ComponentKit"
-  s.version = "0.13"
-  s.summary = "A React-inspired view framework for iOS"
+  s.version = "0.13.1"
+  s.summary = "A React-inspired view framework for iOS with custom changes built by zoog. Forked from facebook/componentkit"
   s.homepage = "https://componentkit.org"
   s.authors = 'adamjernst@fb.com'
   s.license = 'BSD'
@@ -19,4 +19,17 @@ Pod::Spec.new do |s|
     'CLANG_CXX_LANGUAGE_STANDARD' => 'c++11',
     'CLANG_CXX_LIBRARY' => 'libc++',
   }
+
+  s.subspec 'FLAnimatedImage' do |animated|
+    animated.source_files = "FLAnimatedImage/**/*.{h,m}"
+    animated.frameworks = "QuartzCore", "ImageIO", "MobileCoreServices", "CoreGraphics"
+    animated.requires_arc = true
+    animated.dependency 'FLAnimatedImage'
+  end
+
+  s.subspec 'RJImageLoader' do |imageloader|
+    imageloader.source = { :git => 'https://github.com/gudjao/RJImageLoader.git', :branch => 'zoog-custom' }
+    s.dependency 'RJImageLoader'
+  end
 end
+
