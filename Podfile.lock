@@ -1,10 +1,10 @@
 PODS:
-  - ComponentKit (0.13.1):
-    - ComponentKit/FLAnimatedImage (= 0.13.1)
-  - ComponentKit/FLAnimatedImage (0.13.1):
+  - ComponentKit (0.14.1):
+    - ComponentKit/FLAnimatedImage (= 0.14.1)
+  - ComponentKit/FLAnimatedImage (0.14.1):
     - FLAnimatedImage
-  - ComponentKitTestLib (0.13)
-  - ComponentSnapshotTestCase (0.13):
+  - ComponentKitTestLib (0.14)
+  - ComponentSnapshotTestCase (0.14):
     - FBSnapshotTestCase/Core (~> 2.0.4)
   - FBSnapshotTestCase/Core (2.0.7)
   - FLAnimatedImage (1.0.10)
@@ -25,11 +25,11 @@ EXTERNAL SOURCES:
     :path: "./ComponentSnapshotTestCase"
 
 SPEC CHECKSUMS:
-  ComponentKit: 1c94324bddbced87d1cf990572beb8ef10088a41
-  ComponentKitTestLib: df0db542b6605ba88e18cba63dd59d9ccc5966fd
-  ComponentSnapshotTestCase: cce245e91f4cf10369c18ae8438927ff6ca0d146
-  FBSnapshotTestCase: 7e85180d0d141a0cf472352edda7e80d7eaeb547
-  FLAnimatedImage: e16a1e1cef08e4c509b47e4acbe3923f65c16135
+  ComponentKit: 11d9177b5e9940c456e7486d8f5a25c26d9ca5f2
+  ComponentKitTestLib: 4f031eded16e4444e53fefc44428662e9f00d2bd
+  ComponentSnapshotTestCase: e6c2bd68ff245f2a9cc4a7fbb04907f0097d185d
+  FBSnapshotTestCase: d94cf34841c9e77390e29009e8e2713479d48753
+FLAnimatedImage: e16a1e1cef08e4c509b47e4acbe3923f65c16135
   OCMock: a6a7dc0e3997fb9f35d99f72528698ebf60d64f2
 
 COCOAPODS: 0.39.0

@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = "ComponentKit"
-  s.version = "0.13.2"
+  s.version = "0.14.1"
   s.summary = "A React-inspired view framework for iOS with custom changes built by zoog. Forked from facebook/componentkit"
   s.homepage = "https://componentkit.org"
   s.authors = 'adamjernst@fb.com'
